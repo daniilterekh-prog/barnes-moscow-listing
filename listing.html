@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Каталог городской недвижимости Москвы: квартиры, апартаменты и пентхаусы." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Недвижимость Москвы — каталог</title>
+    <link rel="stylesheet" href="./listing.css?v=20260930-5" />
+  </head>
+  <body>
+    <main>
+      <section class="catalog" aria-labelledby="catalog-title">
+        <div class="catalog__inner">
+          <header class="catalog__header">
+            <h1 id="catalog-title">Недвижимость Москвы</h1>
+            <label class="sort-control">
+              <span class="visually-hidden">Сортировка</span>
+              <select id="sort-select" aria-label="Сортировка объектов">
+                <option value="relevance">По релевантности</option>
+                <option value="price-asc">Цена меньше</option>
+                <option value="price-desc">Цена больше</option>
+                <option value="area-asc">Площадь меньше</option>
+                <option value="area-desc">Площадь больше</option>
+              </select>
+            </label>
+          </header>
+
+          <div class="quick-filters" id="quick-filters" aria-label="Быстрые фильтры">
+            <button class="quick-filter" type="button" data-filter="type" aria-expanded="false">
+              <span class="quick-filter__label">Тип недвижимости</span>
+              <span class="quick-filter__value">Не выбрано</span>
+              <span class="quick-filter__chevron" aria-hidden="true"></span>
+            </button>
+            <button class="quick-filter" type="button" data-filter="budget" aria-expanded="false">
+              <span class="quick-filter__label">Бюджет</span>
+              <span class="quick-filter__value">Не выбрано</span>
+              <span class="quick-filter__chevron" aria-hidden="true"></span>
+            </button>
+            <button class="quick-filter" type="button" data-filter="district" aria-expanded="false">
+              <span class="quick-filter__label">Район</span>
+              <span class="quick-filter__value">Не выбрано</span>
+              <span class="quick-filter__chevron" aria-hidden="true"></span>
+            </button>
+            <button class="quick-filter" type="button" data-filter="area" aria-expanded="false">
+              <span class="quick-filter__label">Площадь</span>
+              <span class="quick-filter__value">Не выбрано</span>
+              <span class="quick-filter__chevron" aria-hidden="true"></span>
+            </button>
+            <button class="quick-filter" type="button" data-filter="rooms" aria-expanded="false">
+              <span class="quick-filter__label">Комнаты</span>
+              <span class="quick-filter__value">Не выбрано</span>
+              <span class="quick-filter__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="quick-filter-popover" id="quick-filter-popover" hidden role="dialog" aria-label="Выбор фильтра">
+              <div class="quick-filter-popover__header">
+                <span id="quick-filter-popover-title">Фильтр</span>
+                <button class="quick-filter-popover__close" id="quick-filter-popover-close" type="button" aria-label="Закрыть фильтр">×</button>
+              </div>
+              <div class="quick-filter-popover__options" id="quick-filter-popover-options"></div>
+            </div>
+          </div>
+
+          <ul class="catalog__list" id="catalog-list">
+            <li class="catalog__item" data-order="1">
+              <article class="apartment-card" data-price="0" data-area="538.1" data-type="Пентхаус" data-budget="от 200 млн ₽" data-district="Хамовники" data-rooms="5+">
+                <div class="apartment-card__media">
+                  <a class="apartment-card__media-link" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/561412/" aria-label="Открыть объект CARRE BLANC">
+                    <img class="apartment-card__image" src="./assets/listing-01.jpg" alt="Пентхаус CARRE BLANC" />
+                  </a>
+                  <button class="apartment-card__favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное">♡</button>
+                </div>
+                <div class="apartment-card__body">
+                  <span class="apartment-card__id">ID 561412</span>
+                  <a class="apartment-card__name" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/561412/">Видовой пентхаус с террасами и каминами в премиальном клубном доме CARRE BLANC</a>
+                  <p class="apartment-card__address">Пречистенская наб, 43</p>
+                  <div class="apartment-card__stats" aria-label="Характеристики объекта">
+                    <span><strong>538,1 м²</strong><small>Площадь</small></span>
+                    <span><strong>5</strong><small>Этаж</small></span>
+                    <span><strong>3</strong><small>Спальни</small></span>
+                    <span><strong>5</strong><small>Комнаты</small></span>
+                  </div>
+                  <p class="apartment-card__price">Цена по запросу</p>
+                </div>
+                <div class="apartment-card__actions">
+                  <button class="card-action card-action--secondary" type="button">Заказать звонок</button>
+                  <a class="card-action card-action--primary" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/561412/">Подробнее <span class="card-action__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" /></svg></span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="catalog__item" data-order="2">
+              <article class="apartment-card" data-price="90000000" data-area="100.6" data-type="Апартаменты" data-budget="50–100 млн ₽" data-district="ЦАО" data-rooms="2–3">
+                <div class="apartment-card__media">
+                  <a class="apartment-card__media-link" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/576724/" aria-label="Открыть объект в ЖК Резиденция Тверская">
+                    <img class="apartment-card__image" src="./assets/listing-02.jpg" alt="Апартамент в ЖК Резиденция Тверская" />
+                  </a>
+                  <button class="apartment-card__favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное">♡</button>
+                </div>
+                <div class="apartment-card__body">
+                  <span class="apartment-card__id">ID 576724</span>
+                  <a class="apartment-card__name" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/576724/">Видовой апартамент в ЖК «Резиденция Тверская»</a>
+                  <p class="apartment-card__address">2-я Брестская ул, 6</p>
+                  <div class="apartment-card__stats" aria-label="Характеристики объекта">
+                    <span><strong>100,6 м²</strong><small>Площадь</small></span>
+                    <span><strong>11</strong><small>Этаж</small></span>
+                    <span><strong>2</strong><small>Спальни</small></span>
+                    <span><strong>3</strong><small>Комнаты</small></span>
+                  </div>
+                  <p class="apartment-card__price">90 000 000 ₽</p>
+                </div>
+                <div class="apartment-card__actions">
+                  <button class="card-action card-action--secondary" type="button">Заказать звонок</button>
+                  <a class="card-action card-action--primary" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/576724/">Подробнее <span class="card-action__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" /></svg></span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="catalog__item" data-order="3">
+              <article class="apartment-card" data-price="78626754" data-area="82.9" data-type="Квартира" data-budget="50–100 млн ₽" data-district="Пресненский" data-rooms="2–3">
+                <div class="apartment-card__media">
+                  <a class="apartment-card__media-link" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/593594/" aria-label="Открыть объект Prime Park">
+                    <img class="apartment-card__image" src="./assets/listing-03.jpg" alt="Prime Park" />
+                  </a>
+                  <button class="apartment-card__favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное">♡</button>
+                </div>
+                <div class="apartment-card__body">
+                  <span class="apartment-card__id">ID 593594</span>
+                  <a class="apartment-card__name" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/593594/">Prime Park</a>
+                  <p class="apartment-card__address">Ленинградский пр-кт, 37/3</p>
+                  <div class="apartment-card__stats" aria-label="Характеристики объекта">
+                    <span><strong>82,9 м²</strong><small>Площадь</small></span>
+                    <span><strong>35</strong><small>Этаж</small></span>
+                    <span><strong>2</strong><small>Спальни</small></span>
+                    <span><strong>3</strong><small>Комнаты</small></span>
+                  </div>
+                  <p class="apartment-card__price">78 626 754 ₽</p>
+                </div>
+                <div class="apartment-card__actions">
+                  <button class="card-action card-action--secondary" type="button">Заказать звонок</button>
+                  <a class="card-action card-action--primary" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/593594/">Подробнее <span class="card-action__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" /></svg></span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="catalog__item" data-order="4">
+              <article class="apartment-card" data-price="8953400" data-area="20" data-type="Апартаменты" data-budget="до 50 млн ₽" data-district="ЦАО" data-rooms="1">
+                <div class="apartment-card__media">
+                  <a class="apartment-card__media-link" href="https://barn-estate.ru/novostroyki/581018/" aria-label="Открыть объект WELL">
+                    <img class="apartment-card__image" src="./assets/listing-04.jpg" alt="WELL" />
+                  </a>
+                  <button class="apartment-card__favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное">♡</button>
+                </div>
+                <div class="apartment-card__body">
+                  <span class="apartment-card__id">ID 581018</span>
+                  <a class="apartment-card__name" href="https://barn-estate.ru/novostroyki/581018/">WELL</a>
+                  <p class="apartment-card__address">Измайловский б-р, 1</p>
+                  <div class="apartment-card__stats" aria-label="Характеристики объекта">
+                    <span><strong>20 м²</strong><small>Площадь</small></span>
+                    <span><strong>—</strong><small>Этаж</small></span>
+                    <span><strong>1</strong><small>Спальня</small></span>
+                    <span><strong>1</strong><small>Комнаты</small></span>
+                  </div>
+                  <p class="apartment-card__price">8 953 400 ₽</p>
+                </div>
+                <div class="apartment-card__actions">
+                  <button class="card-action card-action--secondary" type="button">Заказать звонок</button>
+                  <a class="card-action card-action--primary" href="https://barn-estate.ru/novostroyki/581018/">Подробнее <span class="card-action__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" /></svg></span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="catalog__item" data-order="5">
+              <article class="apartment-card" data-price="109920000" data-area="183.2" data-type="Апартаменты" data-budget="100–200 млн ₽" data-district="ЦАО" data-rooms="4–5">
+                <div class="apartment-card__media">
+                  <a class="apartment-card__media-link" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/587510/" aria-label="Открыть объект ID 587510">
+                    <img class="apartment-card__image" src="./assets/listing-05.jpg" alt="Объект на Ленинградском шоссе" />
+                  </a>
+                  <button class="apartment-card__favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное">♡</button>
+                </div>
+                <div class="apartment-card__body">
+                  <span class="apartment-card__id">ID 587510</span>
+                  <a class="apartment-card__name" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/587510/">587510</a>
+                  <p class="apartment-card__address">Ленинградское ш, 69</p>
+                  <div class="apartment-card__stats" aria-label="Характеристики объекта">
+                    <span><strong>183,2 м²</strong><small>Площадь</small></span>
+                    <span><strong>19</strong><small>Этаж</small></span>
+                    <span><strong>4</strong><small>Спальни</small></span>
+                    <span><strong>4</strong><small>Комнаты</small></span>
+                  </div>
+                  <p class="apartment-card__price">109 920 000 ₽</p>
+                </div>
+                <div class="apartment-card__actions">
+                  <button class="card-action card-action--secondary" type="button">Заказать звонок</button>
+                  <a class="card-action card-action--primary" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/587510/">Подробнее <span class="card-action__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" /></svg></span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="catalog__item" data-order="6">
+              <article class="apartment-card" data-price="650000000" data-area="300" data-type="Квартира" data-budget="от 200 млн ₽" data-district="Хамовники" data-rooms="4–5">
+                <div class="apartment-card__media">
+                  <a class="apartment-card__media-link" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/558765/" aria-label="Открыть объект в Садовых кварталах">
+                    <img class="apartment-card__image" src="./assets/listing-06.jpg" alt="Квартира в Садовых кварталах" />
+                  </a>
+                  <button class="apartment-card__favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное">♡</button>
+                </div>
+                <div class="apartment-card__body">
+                  <span class="apartment-card__id">ID 558765</span>
+                  <a class="apartment-card__name" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/558765/">Стильная квартира в премиальном ЖК «Садовые кварталы»</a>
+                  <p class="apartment-card__address">Усачёва ул, 11 Ж</p>
+                  <div class="apartment-card__stats" aria-label="Характеристики объекта">
+                    <span><strong>300 м²</strong><small>Площадь</small></span>
+                    <span><strong>3</strong><small>Этаж</small></span>
+                    <span><strong>4</strong><small>Спальни</small></span>
+                    <span><strong>5</strong><small>Комнаты</small></span>
+                  </div>
+                  <p class="apartment-card__price">650 000 000 ₽</p>
+                </div>
+                <div class="apartment-card__actions">
+                  <button class="card-action card-action--secondary" type="button">Заказать звонок</button>
+                  <a class="card-action card-action--primary" href="https://barn-estate.ru/vtorichnaya-nedvizhimost/558765/">Подробнее <span class="card-action__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" /></svg></span></a>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <p class="catalog__empty" id="catalog-empty" hidden>По выбранным параметрам объектов не найдено.</p>
+        </div>
+      </section>
+    </main>
+    <script src="./listing.js" defer></script>
+  </body>
+</html>

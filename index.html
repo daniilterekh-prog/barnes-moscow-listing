@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Поиск премиальной недвижимости на карте Москвы с быстрыми фильтрами." />
+    <meta name="theme-color" content="#f7f7f5" />
+    <title>Поиск недвижимости на карте</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#map">Перейти к карте</a>
+
+    <main class="app-shell">
+      <aside class="results-panel" aria-label="Результаты поиска">
+        <header class="panel-header">
+          <p class="eyebrow">Коллекция / Москва</p>
+          <div class="heading-row">
+            <h1 id="result-title">16 совпадений</h1>
+            <span class="live-indicator" aria-label="Поиск обновляется"></span>
+          </div>
+
+          <div class="search-row">
+            <label class="search-field" for="search-input">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+                <circle cx="10.8" cy="10.8" r="6.6"></circle>
+                <path d="m16 16 4.5 4.5"></path>
+              </svg>
+              <input id="search-input" type="search" placeholder="Начните вводить запрос" autocomplete="off" />
+            </label>
+            <button class="icon-button" id="advanced-filter-button" type="button" aria-expanded="false" aria-controls="filter-drawer" aria-label="Открыть все фильтры">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M4 7h16M4 17h16M8 4v6M16 14v6"></path>
+                <circle cx="8" cy="7" r="2"></circle>
+                <circle cx="16" cy="17" r="2"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <div class="map-quick-menu" id="quick-menu">
+            <div class="quick-menu__header">
+            </div>
+            <div class="quick-filter-list" id="quick-filter-list"></div>
+            <div class="filter-popover" id="filter-popover" hidden>
+              <div class="filter-popover__header">
+                <span id="popover-title">Фильтр</span>
+                <button class="popover-close" id="popover-close" type="button" aria-label="Закрыть фильтр">×</button>
+              </div>
+              <div class="filter-options" id="filter-options"></div>
+            </div>
+          </div>
+
+          <div class="applied-row" aria-live="polite">
+            <button class="text-button" id="clear-filters" type="button" hidden>Сбросить</button>
+          </div>
+          <div class="applied-filters" id="applied-filters"></div>
+        </header>
+
+        <section class="property-list" id="property-list" aria-label="Найденные объекты">
+          <article class="property-card" data-search="поклонная апартамент премиум квартира цао">
+            <div class="property-image">
+              <img src="./assets/project-figma.jpg" alt="Фасад жилого комплекса Barnes Moscow" />
+              <button class="save-button" type="button" aria-label="Добавить в избранное" aria-pressed="false">♡</button>
+            </div>
+            <div class="property-card__body">
+              <span class="property-id">ID 585863</span>
+              <h2 class="property-card__name">Изысканный 2-комнатный апартамент с панорамным видом в премиальном ЖК «Поклонная 9»</h2>
+              <p class="property-address">Поклонная ул, 9</p>
+              <div class="property-meta" aria-label="Характеристики объекта">
+                <span><strong>50,6 м²</strong><small>Площадь</small></span>
+                <span><strong>20</strong><small>Этаж</small></span>
+                <span><strong>1</strong><small>Спальня</small></span>
+                <span><strong>2</strong><small>Комнаты</small></span>
+              </div>
+              <p class="property-price">56 000 000 ₽</p>
+            </div>
+            <div class="property-card__actions">
+              <button class="card-action card-action--secondary" type="button">Заказать звонок</button>
+              <a class="card-action card-action--primary" href="#details">Подробнее <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="property-card" data-search="bogenhouse пентхаус премиум квартира цао">
+            <div class="property-image property-image--second">
+              <img src="./assets/project-second.jpg" alt="Архитектура жилого комплекса в Москве" />
+              <button class="save-button" type="button" aria-label="Добавить в избранное" aria-pressed="false">♡</button>
+            </div>
+            <div class="property-card__body">
+              <span class="property-id">ID 559973</span>
+              <h2 class="property-card__name">Видовой пентхаус с террасой в клубном доме премиум-класса BOGENHOUSE</h2>
+              <p class="property-address">Озерковская наб, 6</p>
+              <div class="property-meta" aria-label="Характеристики объекта">
+                <span><strong>261,4 м²</strong><small>Площадь</small></span>
+                <span><strong>5</strong><small>Этаж</small></span>
+                <span><strong>4</strong><small>Спальни</small></span>
+                <span><strong>6</strong><small>Комнаты</small></span>
+              </div>
+              <p class="property-price">370 000 000 ₽</p>
+            </div>
+            <div class="property-card__actions">
+              <button class="card-action card-action--secondary" type="button">Заказать звонок</button>
+              <a class="card-action card-action--primary" href="#details">Подробнее <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </section>
+      </aside>
+
+      <section class="map-area" id="map" aria-label="Карта объектов недвижимости">
+        <div class="map-background" aria-hidden="true"></div>
+        <div class="map-wash" aria-hidden="true"></div>
+
+        <div class="mobile-map-toolbar" aria-label="Инструменты карты">
+          <button class="mobile-filter-button" id="mobile-filter-button" type="button" aria-expanded="false" aria-controls="filter-drawer" aria-label="Открыть фильтры">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M4 7h16M4 17h16M8 4v6M16 14v6"></path>
+              <circle cx="8" cy="7" r="2"></circle>
+              <circle cx="16" cy="17" r="2"></circle>
+            </svg>
+          </button>
+        </div>
+
+        <div class="map-controls" aria-label="Управление масштабом карты">
+          <button type="button" id="zoom-in" aria-label="Увеличить масштаб">+</button>
+          <span></span>
+          <button type="button" id="zoom-out" aria-label="Уменьшить масштаб">−</button>
+        </div>
+
+        <div class="map-markers" id="map-markers" aria-label="Объекты на карте"></div>
+
+        <aside class="mobile-object-card" id="mobile-object-card" hidden aria-live="polite">
+          <button class="mobile-object-card__close" id="mobile-object-close" type="button" aria-label="Закрыть информацию об объекте">×</button>
+          <img class="mobile-object-card__image" id="mobile-object-image" src="./assets/project-figma.jpg" alt="" />
+          <span class="mobile-object-card__id" id="mobile-object-id"></span>
+          <h2 id="mobile-object-title"></h2>
+          <p class="mobile-object-card__address" id="mobile-object-address"></p>
+          <div class="mobile-object-card__stats" id="mobile-object-stats"></div>
+          <strong class="mobile-object-card__price" id="mobile-object-price"></strong>
+        </aside>
+
+        <aside class="filter-drawer" id="filter-drawer" hidden aria-label="Все фильтры">
+          <button class="filter-backdrop" id="drawer-backdrop" type="button" aria-label="Закрыть все фильтры"></button>
+          <div class="filter-dialog" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+            <div class="filter-drawer__header">
+              <h2 id="drawer-title">Фильтры</h2>
+              <button class="popover-close" id="drawer-close" type="button" aria-label="Закрыть все фильтры">×</button>
+            </div>
+            <div class="drawer-groups" id="drawer-groups"></div>
+            <div class="filter-drawer__footer">
+              <button class="reset-button" id="reset-filters" type="button">Сбросить фильтры</button>
+              <button class="apply-button" id="apply-filters" type="button">Применить</button>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
